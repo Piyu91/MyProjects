@@ -1,0 +1,49 @@
+﻿@model PracStudentApplication.Models.Student
+
+@{
+                /**/
+
+                ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.StuId)</th>
+                <th>@Html.DisplayNameFor(model => model.StuName)</th>
+                <th>@Html.DisplayNameFor(model => model.StuEmail)</th>
+                <th>@Html.DisplayNameFor(model => model.StuMarks)</th>
+
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <tr>
+                <td>
+                    @Html.HiddenFor(x => x.StuId)
+                    @Html.DisplayFor(model => model.StuId)</td>
+                <td> @Html.EditorFor(model => model.StuName)</td>
+                <td> @Html.EditorFor(model => model.StuEmail)</td>
+                <td> @Html.EditorFor(model => model.StuMarks)</td>
+
+
+            </tr>
+
+
+        </tbody>
+
+
+
+    </table>
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Edit" class="btn btn-default" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+}
+

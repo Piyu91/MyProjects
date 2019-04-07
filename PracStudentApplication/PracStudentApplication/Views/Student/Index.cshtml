@@ -1,0 +1,44 @@
+﻿@*@model IEnumerable<PracStudentApplication.Models.Student> *@
+
+@model PracStudentApplication.ViewModel.StudentViewModel
+
+@Html.Partial("ListStu", Model.listStudents);
+@Html.Partial("CreateStu", Model.StudentSingle);
+
+@{
+    ViewBag.Title = "Student";
+}
+
+@*<h2>Student</h2>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.StuId)</th>
+                <th>@Html.DisplayNameFor(model => model.StuName)</th>
+                <th>@Html.DisplayNameFor(model => model.StuEmail)</th>
+                <th>@Html.DisplayNameFor(model => model.StuMarks)</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td> @Html.DisplayFor(model => item.StuId)</td>
+                    <td> @Html.DisplayFor(model => item.StuName)</td>
+                    <td> @Html.DisplayFor(model => item.StuEmail)</td>
+                    <td> @Html.DisplayFor(model => item.StuMarks)</td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.StuId }, new { @class = "btn btn-primary" }) /
+                        @Html.ActionLink("Delete", "Delete", new { id = item.StuId }, new { @class = "btn btn-primary" })
+                    </td>
+
+                </tr>
+            }
+
+        </tbody>
+
+
+
+    </table>*@
