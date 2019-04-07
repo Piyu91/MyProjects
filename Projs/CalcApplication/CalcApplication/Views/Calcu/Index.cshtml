@@ -1,0 +1,32 @@
+﻿@model CalcApplication.Models.NumbersInp
+
+@{
+    ViewBag.Title = "Calculator";
+}
+
+<h2>Calculate here</h2>
+<div>
+    @Html.LabelFor(model => model.Num1, htmlAttributes: new { @class = "control-label col-md-2 inpNum1" })
+
+    @Html.EditorFor(model => model.Num1)
+
+</div>
+<div>
+    @Html.LabelFor(model => model.Num2, htmlAttributes: new { @class = "control-label col-md-2 inpNum2" })
+
+    @Html.EditorFor(model => model.Num2)
+</div>
+<div>
+
+    @Html.LabelFor(model => model.Answer, htmlAttributes: new { @class = "control-label col-md-2" })
+
+    @Html.TextBoxFor(model => model.Answer, new { disabled = "disabled", @readonly = "readonly" })
+</div>
+<div>
+    <input type="button" value="Summation" class="btn btn-default" onclick="SumcalcuFunc('@Url.Action("sum")');"/>
+    <input type="button" value="Subtration" class="btn btn-default" onclick="calcuFunc('@Url.Action("subsytraction")');"/>
+    <input type="button" value="Multiply" class="btn btn-default" onclick="calcuFunc('@Url.Action("multiplication")')"/>
+    <input type="button" value="Divide" class="btn btn-default" onclick="calcuFunc('@Url.Action("division")')"/>
+
+</div>
+@Scripts.Render("~/appScript")
